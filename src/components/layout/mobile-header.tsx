@@ -37,10 +37,8 @@ export function MobileHeader() {
             <div className="flex items-center gap-1">
                 <ThemeToggle />
                 <Sheet open={open} onOpenChange={setOpen}>
-                    <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon" className="h-9 w-9">
-                            <Menu className="h-4 w-4" />
-                        </Button>
+                    <SheetTrigger render={<Button variant="ghost" size="icon" className="h-9 w-9" />}>
+                        <Menu className="h-4 w-4" />
                     </SheetTrigger>
                     <SheetContent side="right" className="w-72 p-0">
                         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>

@@ -83,14 +83,8 @@ export function ResourceCard({ resource }: ResourceCardProps) {
                                     {resource.title}
                                 </h4>
                                 <DropdownMenu>
-                                    <DropdownMenuTrigger asChild>
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            className="h-7 w-7 shrink-0 -mr-1"
-                                        >
-                                            <MoreVertical className="h-3.5 w-3.5" />
-                                        </Button>
+                                    <DropdownMenuTrigger render={<Button variant="ghost" size="icon" className="h-7 w-7 shrink-0 -mr-1" />}>
+                                        <MoreVertical className="h-3.5 w-3.5" />
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent align="end">
                                         <DropdownMenuItem
@@ -100,11 +94,9 @@ export function ResourceCard({ resource }: ResourceCardProps) {
                                             <Eye className="h-3.5 w-3.5" />
                                             Preview
                                         </DropdownMenuItem>
-                                        <DropdownMenuItem className="gap-2" asChild>
-                                            <a href={resource.file_url} download>
-                                                <Download className="h-3.5 w-3.5" />
-                                                Download
-                                            </a>
+                                        <DropdownMenuItem className="gap-2" render={<a href={resource.file_url} download />}>
+                                            <Download className="h-3.5 w-3.5" />
+                                            Download
                                         </DropdownMenuItem>
                                     </DropdownMenuContent>
                                 </DropdownMenu>

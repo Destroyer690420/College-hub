@@ -54,15 +54,9 @@ export function ReportDialog({ resourceId, resourceTitle }: ReportDialogProps) {
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-                <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-muted-foreground hover:text-destructive gap-1.5 h-8 text-xs"
-                >
-                    <Flag className="h-3 w-3" />
-                    Report
-                </Button>
+            <DialogTrigger render={<Button variant="ghost" size="sm" className="text-muted-foreground hover:text-destructive gap-1.5 h-8 text-xs" />}>
+                <Flag className="h-3 w-3" />
+                Report
             </DialogTrigger>
             <DialogContent className="sm:max-w-md">
                 {isSubmitted ? (
